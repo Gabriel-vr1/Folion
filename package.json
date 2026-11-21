@@ -1,0 +1,21 @@
+{
+  "name": "folion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gemini-powered appliance repair enquiry intake for human review",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --watch --env-file-if-exists=.env server/index.js",
+    "test": "node --test",
+    "test:live": "node --env-file-if-exists=.env scripts/verify-live.js",
+    "check": "node scripts/check.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "express": "^5.3.0"
+  }
+}

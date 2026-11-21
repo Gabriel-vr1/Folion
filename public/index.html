@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d35">
+  <meta name="description" content="Turn your appliance repair enquiry into a clear request for human review with Folion.">
+  <title>Folion · Repair enquiries, organised</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Folion home"><span class="brand-mark" aria-hidden="true">f</span>folion<span class="brand-period">.</span></a>
+    <span class="header-caption">A little clarity. A better start.</span>
+    <span class="prototype-label">Station 01 · Prototype</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">APPLIANCE REPAIR ENQUIRIES, ORGANISED</p>
+      <h1 id="page-title">Let’s get the details <span>sorted.</span></h1>
+      <p>Tell us what’s happening with your appliance. Folion will help put together a clear repair request for a business to review.</p>
+    </section>
+    <div class="workspace">
+      <section class="conversation panel" aria-labelledby="conversation-title">
+        <div class="panel-heading">
+          <div><p class="eyebrow">YOUR ENQUIRY</p><h2 id="conversation-title">Start with what you know</h2></div>
+          <button id="new-enquiry" class="button-quiet" type="button">New enquiry</button>
+        </div>
+        <div id="messages" class="messages" role="log" aria-label="Conversation with Folion" aria-live="polite" aria-relevant="additions"></div>
+        <div id="loading" class="loading" role="status" hidden>Folion is organising your details…</div>
+        <div id="error" class="error" role="alert" hidden></div>
+        <form id="message-form" class="composer">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="3" maxlength="4000" placeholder="e.g. My Samsung washing machine has stopped spinning. I’m in Randburg." required aria-describedby="input-help"></textarea>
+          <div class="composer-footer"><span id="input-help">Enter to send · Shift + Enter for a new line</span><button id="send" class="button-primary" type="submit">Send message</button></div>
+        </form>
+        <p class="privacy-note">Only share details you’re comfortable providing. Messages are processed by Google Gemini.</p>
+      </section>
+      <aside class="summary panel" aria-labelledby="summary-title">
+        <div class="summary-heading"><span class="card-icon" aria-hidden="true">▤</span><p class="eyebrow">THE DETAILS, IN ONE PLACE</p></div>
+        <h2 id="summary-title">Your repair request</h2>
+        <span id="card-status" class="status-badge">Waiting for your enquiry</span>
+        <p id="summary-help" class="summary-help">Your request takes shape as we chat. You can add or correct a detail at any time.</p>
+        <dl id="job-card">
+          <div><dt>Appliance</dt><dd data-field="appliance">Not provided</dd></div>
+          <div><dt>Brand</dt><dd data-field="brand">Not provided</dd></div>
+          <div><dt>Model</dt><dd data-field="model">Not provided</dd></div>
+          <div><dt>Reported problem</dt><dd data-field="problem">Not provided</dd></div>
+          <div><dt>Location</dt><dd data-field="location">Not provided</dd></div>
+          <div><dt>Customer contact <span>(optional)</span></dt><dd data-field="contact">Not provided</dd></div>
+          <div><dt>Additional information</dt><dd data-field="additionalInformation">Not provided</dd></div>
+        </dl>
+        <div class="review-note"><strong>A request, ready for a person.</strong><p>No booking is made here. This prototype does not send your request to a business. Availability, costs and next steps need to be confirmed by the business.</p></div>
+      </aside>
+    </div>
+    <footer class="site-footer"><span>Less back-and-forth. More useful conversations.</span><span>Built with Gemini · DevFest Johannesburg</span></footer>
+  </main>
+</body>
+</html>
